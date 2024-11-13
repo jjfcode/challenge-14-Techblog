@@ -91,12 +91,22 @@ router.get('/signup', (req, res) => {
 
 router.get('/create-post-form', (req, res) => {
   // If the user is already logged in, redirect the request to another route
-  if (req.session.logged_in) {
-    res.redirect('/profile');
+  if (!req.session.logged_in) {
+    res.redirect('/login');
     return;
   }
 
   res.render('/createPostForm');
+});
+
+router.get('/view-posts', withAuth async (req, res) => {
+  // If the user is already logged in, redirect the request to another route
+  if (!req.session.logged_in) {
+    res.redirect('/login');
+    return;
+  }
+
+  res.render('/viewPost');
 });
 
 module.exports = router;
