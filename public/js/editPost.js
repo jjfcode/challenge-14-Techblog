@@ -4,14 +4,15 @@ const editButtonHandler = async (event) => {
     const id = event.target.getAttribute('data-id');
     const name = document.getElementById('name-edit').value
     const description = document.getElementById('description-edit').value
+    const needed_funding = document.getElementById('needed_funding-edit').textContent
 
 
-    if (name && description) {
+    if (name && description && needed_funding) {
 
 
       const response = await fetch(`/api/projects/${id}`, {
         method: 'PUT',
-        body: JSON.stringify({ name, description }),
+        body: JSON.stringify({ name, description, needed_funding }),
         headers: {
           'Content-Type': 'application/json',
         },
