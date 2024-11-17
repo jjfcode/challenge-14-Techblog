@@ -9,9 +9,10 @@ router.get('/', async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['name'],
+          attributes: ['username'],
         },
       ],
+      order: [['createdAt', 'DESC']], // Show newest posts first
     });
 
     // Serialize data so the template can read it
@@ -19,10 +20,11 @@ router.get('/', async (req, res) => {
 
     // Pass serialized data and session flag into template
     res.render('homepage', { 
-      projects, 
+      projects: projects.length > 0 ? projects : [], 
       logged_in: req.session.logged_in 
     });
   } catch (err) {
+    console.error('Error:', err); // Add this for debugging
     res.status(500).json(err);
   }
 });
@@ -33,7 +35,7 @@ router.get('/project/:id', async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['name'],
+          attributes: ['username'],
         },
       ],
     });
@@ -96,7 +98,7 @@ router.get('/create-post-form', withAuth, (req, res) => {
     return;
   }
 
-  res.render('/createPostForm');
+  res.render('createPostForm');
 });
 
 router.get('/view-posts', withAuth, async (req, res) => {
@@ -116,6 +118,26 @@ router.get('/view-posts', withAuth, async (req, res) => {
     const user = userData.get({ plain: true });
 
     res.render('viewPosts', {
+      ...user,
+      logged_in: true
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+// Add this route with your other routes in homeRoutes.js
+router.get('/dashboard', withAuth, async (req, res) => {
+  try {
+    // Find the logged in user based on the session ID
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+      include: [{ model: Project }],
+    });
+
+    const user = userData.get({ plain: true });
+
+    res.render('dashboard', {
       ...user,
       logged_in: true
     });

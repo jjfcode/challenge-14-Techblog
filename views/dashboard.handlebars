@@ -1,0 +1,22 @@
+<div class="blog-container">
+  <div class="blog-post">
+    <div class="post-title">
+      Your Dashboard
+    </div>
+    <div class="post-content">
+      <a href="/create-post-form" class="signup-link">+ New Post</a>
+      
+      {{#if projects.length}}
+        {{#each projects}}
+        <div class="dashboard-post">
+          <h3>{{title}}</h3>
+          <p>{{content}}</p>
+          <div class="post-meta">Created on {{format_date createdAt}}</div>
+        </div>
+        {{/each}}
+      {{else}}
+        <p>You haven't created any posts yet.</p>
+      {{/if}}
+    </div>
+  </div>
+</div> 

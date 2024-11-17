@@ -22,3 +22,166 @@ header, .project:not(:last-child) {
   font-weight: bold;
   margin-left: -5px;
 }
+
+.blog-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+.blog-post {
+  background-color: #d9ead3;
+  border: none;
+  margin-bottom: 10px;
+  padding: 0;
+  border-radius: 0;
+}
+
+.post-title {
+  background-color: #2b2b2b;
+  color: white;
+  padding: 8px;
+  margin: 0;
+  border-radius: 0;
+  font-size: 1.1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.post-meta {
+  text-align: right;
+  color: #ffffff;
+  font-size: 0.8em;
+  margin: 0;
+  padding: 0;
+}
+
+.post-content {
+  padding: 10px;
+  line-height: 1.4;
+}
+
+/* Header styles */
+header {
+  background-color: #2b2b2b;
+  padding: 10px 0;
+}
+
+.header-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.site-title {
+  display: inline-block;
+  color: black;
+  font-size: 20px;
+  margin: 0;
+  padding: 5px 10px;
+  background-color: #9dcd9d;
+  border-radius: 5px;
+}
+
+nav {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+nav a {
+  color: #9dcd9d;
+  text-decoration: none;
+  margin-right: 15px;
+}
+
+nav a:hover {
+  color: #a5d6a7;
+}
+
+/* Login styles */
+.login-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+.login-box {
+  background-color: #d9ead3;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.login-box h2 {
+  background-color: #2b2b2b;
+  color: white;
+  padding: 8px;
+  margin: 0;
+  font-size: 1.1em;
+}
+
+.login-form {
+  padding: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 8px;
+  background-color: #2b2b2b;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.signup-link {
+  display: inline-block;
+  color: #2b2b2b;
+  text-decoration: none;
+  padding: 5px 10px;
+  background-color: #9dcd9d;
+  border-radius: 4px;
+}
+
+.signup-link:hover {
+  background-color: #8bbc8b;
+}
+
+/* Add these styles to your existing CSS */
+.dashboard-post {
+  border-bottom: 1px solid #2b2b2b;
+  margin: 15px 0;
+  padding: 10px 0;
+}
+
+.dashboard-post:last-child {
+  border-bottom: none;
+}
+
+.dashboard-post h3 {
+  margin: 0 0 10px 0;
+  color: #2b2b2b;
+}
+
+.dashboard-post .post-meta {
+  color: #666;
+  font-size: 0.8em;
+  margin-top: 5px;
+}
