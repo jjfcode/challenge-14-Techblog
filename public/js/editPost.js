@@ -1,8 +1,10 @@
 const editButtonHandler = async (event) => {
+  event.preventDefault()
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
     const name = document.getElementById('name-edit').value
-    const description = document.getElementById('description-edit')
+    const description = document.getElementById('description-edit').value
+
 
     if (name && description) {
 
@@ -26,4 +28,4 @@ const editButtonHandler = async (event) => {
 
 document
   .querySelector('.edit-form')
-  .addEventListener('click', editButtonHandler);
+  .addEventListener('submit', editButtonHandler);
