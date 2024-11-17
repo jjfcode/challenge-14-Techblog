@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Project, User } = require('../models');
+const { Project, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -37,8 +37,25 @@ router.get('/project/:id', async (req, res) => {
           model: User,
           attributes: ['username'],
         },
+        {
+          model: Comment,
+          include: [
+            {
+              model: User,
+              attributes: ['username'],
+            },
+          ],
+          order: [['createdAt', 'DESC']], // Show newest comments first
+        },
       ],
     });
+
+    if (!projectData) {
+      res.status(404).render('404', {
+        logged_in: req.session.logged_in
+      });
+      return;
+    }
 
     const project = projectData.get({ plain: true });
 
@@ -47,6 +64,7 @@ router.get('/project/:id', async (req, res) => {
       logged_in: req.session.logged_in
     });
   } catch (err) {
+    console.error('Error:', err);
     res.status(500).json(err);
   }
 });

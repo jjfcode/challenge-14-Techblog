@@ -3,7 +3,7 @@
     {{#each projects}}
     <div class="blog-post">
       <div class="post-title">
-        {{title}}
+        <a href="/project/{{id}}" class="post-link">{{title}}</a>
         <span class="post-meta">Posted by {{user.username}} on {{format_date createdAt}}</span>
       </div>
       <div class="post-content">
@@ -17,7 +17,7 @@
         Welcome to The Tech Blog
       </div>
       <div class="post-content">
-        No posts have been created yet. Login to create the first post!
+        No posts have been created yet. {{#unless logged_in}}<a href="/login">Login</a>{{/unless}} to create the first post!
       </div>
     </div>
   {{/if}}
