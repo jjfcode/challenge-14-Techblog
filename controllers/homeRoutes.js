@@ -164,4 +164,33 @@ router.get('/dashboard', withAuth, async (req, res) => {
   }
 });
 
+// Add this route to your existing routes
+router.get('/edit-post/:id', withAuth, async (req, res) => {
+  try {
+    const projectData = await Project.findByPk(req.params.id);
+
+    if (!projectData) {
+      res.status(404).render('404', {
+        logged_in: req.session.logged_in
+      });
+      return;
+    }
+
+    // Verify the logged-in user owns this post
+    if (projectData.user_id !== req.session.user_id) {
+      res.redirect('/dashboard');
+      return;
+    }
+
+    const project = projectData.get({ plain: true });
+
+    res.render('edit-post', {
+      ...project,
+      logged_in: true
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;

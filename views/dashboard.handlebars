@@ -1,10 +1,11 @@
 <div class="blog-container">
   {{#if projects.length}}
     {{#each projects}}
-    <div class="dashboard-post">
-      <h3>{{title}}</h3>
-      <p>{{content}}</p>
-      <div class="post-meta">Created on {{format_date createdAt}}</div>
+    <div class="blog-post">
+      <div class="post-title">
+        <a href="/edit-post/{{id}}" class="post-link">{{title}}</a>
+        <span class="post-meta">Created on {{format_date createdAt}}</span>
+      </div>
     </div>
     {{/each}}
   {{else}}

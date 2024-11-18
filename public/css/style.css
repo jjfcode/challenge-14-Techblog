@@ -288,3 +288,21 @@ textarea.form-input {
 .post-title a:hover {
   text-decoration: underline;
 }
+
+/* Add these to your existing CSS */
+.button-group {
+  display: flex;
+  gap: 10px;
+}
+
+.update-btn, .delete-btn {
+  flex: 1;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+}
+
+.delete-btn:hover {
+  background-color: #c82333;
+}
