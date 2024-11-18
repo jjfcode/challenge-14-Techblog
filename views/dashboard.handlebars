@@ -1,22 +1,15 @@
 <div class="blog-container">
-  <div class="blog-post">
-    <div class="post-title">
-      Your Dashboard
+  {{#if projects.length}}
+    {{#each projects}}
+    <div class="dashboard-post">
+      <h3>{{title}}</h3>
+      <p>{{content}}</p>
+      <div class="post-meta">Created on {{format_date createdAt}}</div>
     </div>
-    <div class="post-content">
-      {{#if projects.length}}
-        {{#each projects}}
-        <div class="dashboard-post">
-          <h3>{{title}}</h3>
-          <p>{{content}}</p>
-          <div class="post-meta">Created on {{format_date createdAt}}</div>
-        </div>
-        {{/each}}
-      {{else}}
-        <p>You haven't created any posts yet.</p>
-      {{/if}}
-    </div>
-  </div>
+    {{/each}}
+  {{else}}
+    <p>You haven't created any posts yet.</p>
+  {{/if}}
   
   <div class="new-post-button-container">
     <a href="/create-post-form" class="new-post-button">+ New Post</a>

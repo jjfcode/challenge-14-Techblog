@@ -30,35 +30,35 @@ header, .project:not(:last-child) {
 }
 
 .blog-post {
-  background-color: #d9ead3;
-  border: none;
-  margin-bottom: 10px;
-  padding: 0;
+  margin-bottom: 20px;
+}
+
+.post-header {
+  background-color: #2b2b2b;
+  color: white;
+  padding: 10px;
 }
 
 .post-title {
   background-color: #2b2b2b;
   color: white;
-  padding: 8px;
-  margin: 0;
-  font-size: 1.1em;
+  padding: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .post-meta {
-  text-align: right;
-  color: #ffffff;
+  color: #cccccc;
   font-size: 0.8em;
-  margin: 0;
-  padding: 0;
 }
 
 .post-content {
-  padding: 10px;
-  line-height: 1.4;
   background-color: #d9ead3;
+  padding: 20px;
+  line-height: 1.5;
+  border: 2px solid #2b2b2b;
+  border-top: none;
 }
 
 /* Header styles */
@@ -163,7 +163,7 @@ nav a:hover {
   background-color: #8bbc8b;
 }
 
-/* Add these styles to your existing CSS */
+/* Update dashboard styles */
 .dashboard-post {
   background-color: #d9ead3;
   margin-bottom: 10px;
@@ -172,9 +172,22 @@ nav a:hover {
 .dashboard-post h3 {
   background-color: #2b2b2b;
   color: white;
-  padding: 8px;
+  padding: 10px;
   margin: 0;
-  font-size: 1.1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dashboard-post p {
+  padding: 20px;
+  margin: 0;
+}
+
+.dashboard-post .post-meta {
+  padding: 0 20px 20px;
+  color: #666;
+  font-size: 0.8em;
 }
 
 /* Add these to your existing CSS */
@@ -264,4 +277,14 @@ textarea.form-input {
 
 .new-post-button:hover {
   background-color: #3b3b3b;
+}
+
+/* Update link styles */
+.post-title a {
+  color: white;
+  text-decoration: none;
+}
+
+.post-title a:hover {
+  text-decoration: underline;
 }
