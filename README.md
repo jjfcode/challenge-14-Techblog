@@ -10,6 +10,7 @@ A CMS-style blog site where developers can publish their blog posts and comment 
   - [Installation](#installation)
   - [Usage](#usage)
   - [Features](#features)
+  - [Web Page](#web-page)
   - [Technologies Used](#technologies-used)
   - [Screenshots](#screenshots)
   - [Questions](#questions)
@@ -54,6 +55,9 @@ A CMS-style blog site where developers can publish their blog posts and comment 
 - Dashboard for managing personal posts
 - Clean and responsive user interface
 - Session timeout for security
+
+## Web Page
+
 
 ## Technologies Used
 - Node.js
