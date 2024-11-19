@@ -12,7 +12,6 @@ A CMS-style blog site where developers can publish their blog posts and comment 
   - [Features](#features)
   - [Technologies Used](#technologies-used)
   - [Screenshots](#screenshots)
-  - [Contributing](#contributing)
   - [Questions](#questions)
 
 ## Installation
@@ -34,7 +33,7 @@ A CMS-style blog site where developers can publish their blog posts and comment 
    ```
 5. Seed the database:
    ```bash
-   node seeds/seed.js
+   npm run seed
    ```
 6. Start the server:
    ```bash
@@ -67,12 +66,15 @@ A CMS-style blog site where developers can publish their blog posts and comment 
 - dotenv
 
 ## Screenshots
-[Add your application screenshots here]
+![alt text](./public/image/Screenshot%201.png)
 
-## Contributing
-Contributions are welcome! Please feel free to submit a Pull Request.
+![alt text](./public/image/Screenshot%202.png)
+
+![alt text](./public/image/Screenshot%203.png)
+
+![alt text](./public/image/Screenshot%204.png)
 
 ## Questions
-If you have any questions about the repository, please open an issue or contact me directly at [your-email@example.com].
+If you have any questions about the repository, please open an issue or contact me directly at [johnferlito73@gmail.com].
 
-GitHub: [Your GitHub Username](https://github.com/jjfcode/challenge-14-Techblog)
+GitHub: [jjfcode](https://github.com/jjfcode/challenge-14-Techblog)
